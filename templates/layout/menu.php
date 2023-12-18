@@ -117,7 +117,7 @@
                             </div> -->
         </div>
     </div>
-    <div class="header-height">
+    <div class="header-height" <?php if ($com !== 'index') echo 'style="display: none;"'; ?>>
         <div id="menu_top">
             <div class="fixwidth clearfix d-flex">
                 <div class="category">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="menu">
                     <ul class="menu_cap_cha d-flex">
-                        <li class="menulicha "><a href="" title="TRANG CHỦ">trang chủ</a></li>
+                        <li class="menulicha"><a href="" title="TRANG CHỦ">trang chủ</a></li>
                         <?php if ($splistmenu_nb) { ?>
                             <?php foreach ($splistmenu_nb as $c_nb => $list_nb) ?>
                             <li class="menulicha"><a href="<?= $list_nb[$sluglang] ?>"><?= $list_nb['ten' . $lang] ?></a></li>
@@ -170,8 +170,8 @@
                                 </ul>
                             <?php } ?>
                         </li> -->
-                        <li class="menulicha"><a href="tin-tuc" title="TIN TỨC">cẩm nang</a></li>
-                        <li class="menulicha "><a href="gioi-thieu" title="GIỚI THIỆU">giới thiệu</a></li>
+                        <li class="menulicha"><a href="tin-tuc" title="TIN TỨC">tin thị trường</a></li>
+                        <li class="menulicha"><a href="gioi-thieu" title="GIỚI THIỆU">giới thiệu</a></li>
                         <li class="menulicha"><a href="lien-he" title="LIÊN HỆ">liên hệ</a></li>
                     </ul>
                 </div>

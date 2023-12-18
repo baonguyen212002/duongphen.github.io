@@ -62,13 +62,13 @@ NN_FRAMEWORK.AltImages = function() {
 };
 
 /* Fix menu */
-NN_FRAMEWORK.FixMenu = function() {
-    $(window).scroll(function() {
-        let hei = $('.header-cachtop').height();
-        if ($(window).scrollTop() >= hei) $("#menu_top").addClass('fixed');
-        else $("#menu_top").removeClass('fixed');
-    });
-};
+// NN_FRAMEWORK.FixMenu = function() {
+//     $(window).scroll(function() {
+//         let hei = $('.header-cachtop').height();
+//         if ($(window).scrollTop() >= hei) $("#menu_top").addClass('fixed');
+//         else $("#menu_top").removeClass('fixed');
+//     });
+// };
 
 /* Tools */
 NN_FRAMEWORK.Tools = function() {
@@ -187,7 +187,7 @@ NN_FRAMEWORK.OwlPage = function() {
         $('.owl-slideshow').owlCarousel({
             items: 1,
             rewind: true,
-            autoplay: true,
+            autoplay: false,
             loop: false,
             lazyLoad: false,
             mouseDrag: false,
@@ -197,8 +197,8 @@ NN_FRAMEWORK.OwlPage = function() {
             margin: 0,
             smartSpeed: 500,
             autoplaySpeed: 3500,
-            nav: false,
-            dots: false
+            nav: true,
+            dots: true
         });
         $('.prev-slideshow').click(function() {
             $('.owl-slideshow').trigger('prev.owl.carousel');
@@ -650,7 +650,7 @@ $(document).ready(function() {
     NN_FRAMEWORK.WowAnimation();
     NN_FRAMEWORK.AltImages();
     NN_FRAMEWORK.BackToTop();
-    NN_FRAMEWORK.FixMenu();
+    // NN_FRAMEWORK.FixMenu();
     NN_FRAMEWORK.OwlPage();
     NN_FRAMEWORK.OwlProDetail();
     NN_FRAMEWORK.Toc();

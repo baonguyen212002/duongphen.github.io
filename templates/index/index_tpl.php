@@ -2,22 +2,22 @@
     <div class="container">
         <div class="banner-list">
             <div class="flex-center-between w-100">
-                <?php if($tintuc) { ?>
-                    <?php foreach($tintuc as $bv) { ?>
-                    <div class="banner-list__item">
-                        <div class="wrap">
-                            <a href="<?= $bv['tenkhongdauvi'] ?>">
-                                <div class="thumnail">
-                                    <img src="<?= THUMBS ?>/910x980x1/<?= UPLOAD_NEWS_L . $bv['photo'] ?>" alt="<?= $bv['ten' . $lang] ?>" width="400px" height="235px">
-                                </div>
-                                <div class="content">
-                                    <div class="content-wrap">
-                                        <div class="content-wrap__title"><?= $bv['ten' . $lang] ?></div>
+                <?php if ($tintuc) { ?>
+                    <?php foreach ($tintuc as $bv) { ?>
+                        <div class="banner-list__item">
+                            <div class="wrap">
+                                <a href="<?= $bv['tenkhongdauvi'] ?>">
+                                    <div class="thumnail">
+                                        <img src="<?= THUMBS ?>/910x980x1/<?= UPLOAD_NEWS_L . $bv['photo'] ?>" alt="<?= $bv['ten' . $lang] ?>" width="400px" height="235px">
                                     </div>
-                                </div>
-                            </a>
-                        </div> 
-                    </div>
+                                    <div class="content">
+                                        <div class="content-wrap">
+                                            <div class="content-wrap__title"><?= $bv['ten' . $lang] ?></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     <?php } ?>
                 <?php } ?>
             </div>
@@ -25,39 +25,42 @@
     </div>
 </div>
 <div class="wrap_gioithieu background-gt">
-	<div class="fixwidth">
-		<div class="wrap_title_gioithieu">
-			<div class="md-12-50 md-9-50 md-7-100 pd-20 rs-pd">
-                <div class="text">
-                    <div class="gt_noidung"><?= htmlspecialchars_decode($gioithieu['mota' . $lang]) ?></div>
-                    <div class="flex-left"><a class="xemgt" href="gioi-thieu"><span>Xem thêm</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+    <div class="fixwidth">
+        <div class="section-intro__box flex-center-between content-left ">
+            <div class="thumbnail">
+                <div class="pdt-20 anh-gioithieu">
+                    <div id="img-intro">
+                        <?php foreach ($hinhanhgioithieu as $intro => $imgintro) { ?>
+                            <div class="pd-5">
+                                <div class="img-gt">
+                                    <img onerror="this.src='<?= THUMBS ?>/150x150x1/assets/images/noimage.png';" src="<?= THUMBS ?>/605x365x1/upload/photo/<?= $imgintro['photo'] ?>" alt="hinh-intro">
+                                </div>
+                            </div>
+                        <?php } ?>
+
+
+                    </div>
                 </div>
-				
-			</div>
-			<div class="md-12-50 md-9-50 md-7-100 pd-20 rs-pd">
-				<div class="pdt-20 anh-gioithieu">
-					<div id="img-intro">
-						<?php foreach ($hinhanhgioithieu as $intro => $imgintro) { ?>
-							<div class="pd-5">
-								<div class="img-gt">
-									<img onerror="this.src='<?= THUMBS ?>/150x150x1/assets/images/noimage.png';" src="<?= THUMBS ?>/605x365x1/upload/photo/<?= $imgintro['photo'] ?>" alt="hinh-intro">
-								</div>
-							</div>
-						<?php } ?>
+            </div>
+            <div class="text">
+                <div class="text-content ck ck-reset ck-editor ck-rounded-corners w-100">
+                    <div class="ck-content w-100">
+                        <h1>Giới thiệu về Doanh Nghiệp Cung Cấp Đường Phèn Việt Nam​</h1>
+                        <?= htmlspecialchars_decode($gioithieu['mota' . $lang]) ?>
+                    </div>
+                </div>
+                <div class="flex-left"><a class="xemgt" href="gioi-thieu"><span>Xem thêm</span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></div>
+            </div>
 
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
 </div>
 <div class="wrap_product">
     <div class="wrap_product_index">
         <div class="fixwidth">
             <div class="row">
                 <div class="col-md-12">
-                     
+
                 </div>
             </div>
         </div>
@@ -75,7 +78,7 @@
                             <div class="boxproduct_item sp_cap1">
                                 <a class="boxproduct_img" href="<?= $value['tenkhongdauvi'] ?>">
                                     <span>
-                                    <img onerror="this.src='/assets/images/noimage.png';" src="<?= UPLOAD_PRODUCT_L . $value['photo'] ?>" alt="<?= $value['ten' . $lang] ?>" />
+                                        <img onerror="this.src='/assets/images/noimage.png';" src="<?= UPLOAD_PRODUCT_L . $value['photo'] ?>" alt="<?= $value['ten' . $lang] ?>" />
                                     </span>
                                 </a>
                                 <div class="boxproduct_info">
@@ -131,7 +134,7 @@
                     </div>
                     <div class="g-recaptcha" data-sitekey="6Lf0zicpAAAAAGodEYJJy1k-U-10qLJw8qvnoeEq"></div>
                 </div>
-                
+
                 <div class="col-md-2">
                     <input style="width: 100%; height: 90%;font-size: 20px;font-weight: 600;background: red;" type="submit" class="btn btn-primary" name="submit-newsletter" value="Gửi" disabled />
                 </div>

@@ -57,6 +57,17 @@
     $config['photo']['man_photo'][$nametype]['thumb_photo'] = '30x30x2';
     $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
+
+    $nametype = "img-intro";
+    $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Hình ảnh giới thiệu";
+    $config['photo']['man_photo'][$nametype]['number_photo'] = 1;
+    $config['photo']['man_photo'][$nametype]['images_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['avatar_photo'] = true;
+    $config['photo']['man_photo'][$nametype]['width_photo'] = 285;
+    $config['photo']['man_photo'][$nametype]['height_photo'] = 220;
+    $config['photo']['man_photo'][$nametype]['thumb_photo'] = '285x220x1';
+    $config['photo']['man_photo'][$nametype]['img_type_photo'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+
     /* Slideshow */
     // $nametype = "social-page";
     // $config['photo']['man_photo'][$nametype]['title_main_photo'] = "Social page";

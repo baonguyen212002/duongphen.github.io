@@ -14,6 +14,7 @@
 
     $gioithieu = $d->rawQueryOne("select ten$lang, mota$lang,photo,photo1 from #_static where type = ?",array('gioi-thieu'));
 
+    $hinhanhgioithieu = $d->rawQuery("select * from #_photo where type = ? and hienthi > 0 order by stt, id desc", array('img-intro'));
 
     $tintuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ",array('tin-tuc'));
 
