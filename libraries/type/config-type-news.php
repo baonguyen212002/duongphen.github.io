@@ -121,30 +121,30 @@
     $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
     /* Công trình (List) */
-    $nametype = "khuyen-mai";
-    $config['news'][$nametype]['title_main'] = "Khuyến mãi";
-    $config['news'][$nametype]['dropdown'] = false;
-    $config['news'][$nametype]['list'] = false;
-    $config['news'][$nametype]['cat'] = false;
-    $config['news'][$nametype]['item'] = false;
-    $config['news'][$nametype]['sub'] = false;
-    $config['news'][$nametype]['tags'] = false;
-    $config['news'][$nametype]['view'] = true;
-    $config['news'][$nametype]['copy'] = true;
-    $config['news'][$nametype]['copy_image'] = false;
-    $config['news'][$nametype]['slug'] = true;
-    $config['news'][$nametype]['check'] = array('noibat' => 'Nổi bật');
-    $config['news'][$nametype]['images'] = true;
-    $config['news'][$nametype]['show_images'] = true;
-    $config['news'][$nametype]['gallery'] = array();
-    $config['news'][$nametype]['mota'] = true;
-    $config['news'][$nametype]['noidung'] = true;
-    $config['news'][$nametype]['noidung_cke'] = true;
-    $config['news'][$nametype]['seo'] = true;
-    $config['news'][$nametype]['width'] = 380;
-    $config['news'][$nametype]['height'] = 270;
-    $config['news'][$nametype]['thumb'] = '100x100x1';
-    $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+    // $nametype = "khuyen-mai";
+    // $config['news'][$nametype]['title_main'] = "Khuyến mãi";
+    // $config['news'][$nametype]['dropdown'] = false;
+    // $config['news'][$nametype]['list'] = false;
+    // $config['news'][$nametype]['cat'] = false;
+    // $config['news'][$nametype]['item'] = false;
+    // $config['news'][$nametype]['sub'] = false;
+    // $config['news'][$nametype]['tags'] = false;
+    // $config['news'][$nametype]['view'] = true;
+    // $config['news'][$nametype]['copy'] = true;
+    // $config['news'][$nametype]['copy_image'] = false;
+    // $config['news'][$nametype]['slug'] = true;
+    // $config['news'][$nametype]['check'] = array('noibat' => 'Nổi bật');
+    // $config['news'][$nametype]['images'] = true;
+    // $config['news'][$nametype]['show_images'] = true;
+    // $config['news'][$nametype]['gallery'] = array();
+    // $config['news'][$nametype]['mota'] = true;
+    // $config['news'][$nametype]['noidung'] = true;
+    // $config['news'][$nametype]['noidung_cke'] = true;
+    // $config['news'][$nametype]['seo'] = true;
+    // $config['news'][$nametype]['width'] = 380;
+    // $config['news'][$nametype]['height'] = 270;
+    // $config['news'][$nametype]['thumb'] = '100x100x1';
+    // $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
     $nametype = "bang-gia";
     $config['news'][$nametype]['title_main'] = "Bảng giá";
@@ -187,6 +187,29 @@
     $config['news'][$nametype]['height_list'] = 270;
     $config['news'][$nametype]['thumb_list'] = '100x100x1';
     $config['news'][$nametype]['img_type_list'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+
+    // Chính sách
+    $nametype = "chinh-sach";
+    $config['news'][$nametype]['title_main'] = "Chính sách";
+    $config['news'][$nametype]['check'] = array('noibat'=> 'Nổi bật');
+    $config['news'][$nametype]['dropdown'] = false;
+    $config['news'][$nametype]['list'] = false;
+    $config['news'][$nametype]['view'] = true;
+
+    $config['news'][$nametype]['slug'] = true;
+    $config['news'][$nametype]['copy'] = true;
+    $config['news'][$nametype]['bando'] = false;
+    $config['news'][$nametype]['images'] = false;
+    $config['news'][$nametype]['show_images'] = false;
+    $config['news'][$nametype]['mota'] = false;
+    $config['news'][$nametype]['noidung'] = true;
+    $config['news'][$nametype]['noidung_cke'] = true;
+    $config['news'][$nametype]['seo'] = true;
+    $config['news'][$nametype]['width'] = 240;
+    $config['news'][$nametype]['height'] = 200;
+    $config['news'][$nametype]['thumb'] = '240x200x1';
+    $config['news'][$nametype]['img_type'] = '.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+  
 
     /* Tin tức */
     /*$nametype = "tin-tuc";

@@ -7,8 +7,9 @@
 					<div class="procart procart-label d-flex align-items-start justify-content-between">
 						<div class="pic-procart"><?=hinhanh?></div>
 						<div class="info-procart"><?=tensanpham?></div>
+						<div class="price-procart"><?=gia?></div>
 						<div class="quantity-procart">
-							<p><?=soluong?></p>
+							<?=soluong?>
 							<p><?=thanhtien?></p>
 						</div>
 						<div class="price-procart"><?=thanhtien?></div>
@@ -43,6 +44,7 @@
 									<?php } ?>
 								</div>
 							</div>
+							<div class="price-procart"><?= $func->format_money($proinfo['gia']) ?></div>
 							<div class="quantity-procart">
 								<div class="price-procart price-procart-rp">
 									<?php if($proinfo['giamoi']) { ?>

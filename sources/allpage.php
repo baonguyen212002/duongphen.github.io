@@ -9,7 +9,9 @@
     $splistmenu_cat_nb = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_product_cat where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc",array('san-pham'));
     $splistmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_product_list where type = ? and hienthi > 0 order by stt,id desc",array('san-pham'));
     $dv_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('dich-vu'));
-    $tintuc_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('tin-tuc'));
+    $tintuc_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news where noibat > 0 and hienthi > 0 order by stt,id desc",array('tin-tuc'));;
+    // $tintuc_
+    // $chinhsach = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('chinh-sach'));
     $phukien_listmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_news_list where type = ? and hienthi > 0 order by stt,id desc",array('phu-kien'));
 
    

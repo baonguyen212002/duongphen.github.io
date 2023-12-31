@@ -2,6 +2,7 @@
 define("trangchu","Trang chủ");
 define("gioithieu","Giới thiệu");
 define("tintuc","Tin tức");
+define("tinthitruong","Tin thị trường");
 define("lienhe","Liên hệ");
 define("motasanpham","Mô tả");
 define("sanpham","Sản phẩm");

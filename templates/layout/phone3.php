@@ -68,10 +68,9 @@
 
 .support-online { 
   position: fixed;
-   z-index: 999;
-    right: auto; 
-    bottom: 50px;
-     /* left: auto;*/
+  z-index: 999;
+  bottom: 200px;
+  right: 50px;
     }
 
 </style>

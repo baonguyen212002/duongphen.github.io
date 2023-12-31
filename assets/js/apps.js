@@ -659,4 +659,19 @@ $(document).ready(function() {
     NN_FRAMEWORK.Tabs();
     NN_FRAMEWORK.Videos();
     NN_FRAMEWORK.Search();
+    window.addEventListener('resize', function() {
+        var screenWidth = window.innerWidth;
+        var footerwidgets = document.querySelectorAll('.footer-widget');
+    
+        footerwidgets.forEach(function(footerwidget) {
+            if (screenWidth < 1000) {
+                footerwidget.classList.remove('flex-left');
+            } else {
+                footerwidget.classList.add('flex-left');
+            }
+        });
+    });
+    
+    // Gửi sự kiện resize ngay sau khi trang được tải để áp dụng trạng thái ban đầu
+    window.dispatchEvent(new Event('resize'));
 });

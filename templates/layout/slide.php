@@ -8,7 +8,7 @@
                             <div id="slider" class="owl-carousel owl-theme owl-slideshow">
                                 <?php foreach ($slider as $v) { ?>
                                     <div class="item_slider">
-                                        <a href="<?= $v['link'] ?>" target="_blank" title="<?= $v['ten' . $lang] ?>"><img onerror="this.src='<?= THUMBS ?>/900x450x2/assets/images/noimage.png';" src="<?= THUMBS ?>/900x450x1/<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" /></a>
+                                        <img onerror="this.src='<?= THUMBS ?>/900x450x2/assets/images/noimage.png';" src="<?= THUMBS ?>/1200x600x1/<?= UPLOAD_PHOTO_L . $v['photo'] ?>" alt="<?= $v['ten' . $lang] ?>" title="<?= $v['ten' . $lang] ?>" />
                                         <!-- <?php if ($v['ten' . $lang] != '') { ?>
                                     <div class="slider_info1">
                                         <h3 class="slider_info__name1"><?= $v['ten' . $lang] ?></h3>

@@ -1,9 +1,16 @@
-<div class="title"><?= $title_crumb ?></div>
-<div class="main_news"><span><?= $row_detail['ten' . $lang] ?></span></div>
+<div class="main_news">
+    <h1 class="color_title"><?= $row_detail['ten' . $lang] ?></h1>
+</div>
 <?php /*<div class="time-main"><i class="fas fa-calendar-week"></i><span><?=ngaydang?>: <?=date("d/m/Y h:i A",$row_detail['ngaytao'])?></span></div>*/ ?>
 <?php if (isset($row_detail['noidung' . $lang]) && $row_detail['noidung' . $lang] != '') { ?>
     <div class="meta-toc">
         <div class="box-readmore">
+            <div id="toc-lists__header" class="toc-lists__header flex-center-between">
+                <div class="flex-center-left">
+                    <p>Mục lục</p>
+                </div>
+
+            </div>
             <ul class="toc-list" data-toc="article" data-toc-headings="h1, h2, h3"></ul>
         </div>
     </div>
@@ -28,7 +35,7 @@
         <strong><?= noidungdangcapnhat ?></strong>
     </div>
 <?php } ?>
-<div class="share othernews">
+<!-- <div class="share othernews">
     <b><?= baivietkhac ?>:</b>
     <ul class="list-news-other">
         <?php if (isset($news) && count($news) > 0) {
@@ -40,4 +47,4 @@
         } ?>
     </ul>
     <div class="pagination-home"><?= (isset($paging) && $paging != '') ? $paging : '' ?></div>
-</div>
+</div> -->

@@ -69,6 +69,7 @@
 			'comlang' => array(
 				"gioi-thieu" => array("vi"=>"gioi-thieu"),
 				"tin-tuc" => array("vi"=>"tin-tuc"),
+				"chinh-sach" => array("vi"=>"chinh-sach"),
 				"san-pham" => array("vi"=>"san-pham"),
 				"cong-trinh" => array("vi"=>"cong-trinh"),
 				"dich-vu" => array("vi"=>"dich-vu"),

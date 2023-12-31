@@ -1,5 +1,5 @@
 <div class="title">
-    <span><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></span>
+    <h1 class="color_title"><?= (@$title_cat != '') ? $title_cat : @$title_crumb ?></h1>
 </div>
 <div class="content-main w-clear"><?= (isset($static['noidung' . $lang]) && $static['noidung' . $lang] != '') ? htmlspecialchars_decode($static['noidung' . $lang]) : '' ?></div>
 <div class="share">

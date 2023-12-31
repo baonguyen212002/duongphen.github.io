@@ -1,6 +1,6 @@
 <?php  
 	if(!defined('SOURCES')) die("Error");
- 
+    @$id = htmlspecialchars($_GET['id']);
     $slider = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc",array('slide'));
     $doitac = $d->rawQuery("select ten$lang, mota$lang, photo, link from #_photo where type = ? and hienthi > 0 order by stt,id desc",array('doitac'));
     $kh = $d->rawQuery("select ten$lang, mota$lang, photo,diachi,nghenghiep, noidung$lang from #_news where type = ? and hienthi > 0 order by stt,id desc ",array('feedback'));
@@ -15,8 +15,9 @@
     $gioithieu = $d->rawQueryOne("select ten$lang, mota$lang,photo,photo1 from #_static where type = ?",array('gioi-thieu'));
 
     $hinhanhgioithieu = $d->rawQuery("select * from #_photo where type = ? and hienthi > 0 order by stt, id desc", array('img-intro'));
-
-    $tintuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ",array('tin-tuc'));
+    $getRating = $d->rawQuery("select id, rating, id_product from #_danhgia where id_product = 747 order by id desc",array($id));
+    // var_dump($getRating);die();
+    $tintuc = $d->rawQuery("select ten$lang, tenkhongdau$lang, mota$lang, ngaytao, id, photo from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc limit 0,3",array('tin-tuc'));
 
     $duan = $d->rawQuery("select ten$lang, tenkhongdau$lang, id, icon,mota$lang from #_news where type = ? and noibat > 0 and hienthi > 0 order by stt,id desc ",array('dich-vu'));
    

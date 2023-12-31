@@ -20,12 +20,11 @@
     $css->setCss("./assets/slick/slick-style.css");
     $css->setCss("./assets/css/fonts.css");
     $css->setCss("./assets/css/style.css");
-    /*
     $css->setCss("./assets/css/cart.css");
-    $css->setCss("./assets/css/style_media.css");
-    $css->setCss("./assets/login/login.css");
+    // $css->setCss("./assets/css/style_media.css");
+    // $css->setCss("./assets/login/login.css");
 
-    */
+    
     echo $css->getCss();
 ?>
  

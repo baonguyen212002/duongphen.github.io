@@ -123,7 +123,7 @@ blockquote {
 
 b,
 strong {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 small {
@@ -563,7 +563,7 @@ pre code {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 1240px;
   }
 }
 
@@ -595,7 +595,7 @@ pre code {
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {
-    max-width: 1140px;
+    max-width: 1240px;
   }
 }
 
@@ -4970,7 +4970,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding-right: 0.5rem;
   color: #6c757d;
-  content: "/";
+  content: ">";
 }
 
 .breadcrumb-item + .breadcrumb-item:hover::before {

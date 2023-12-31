@@ -15,10 +15,10 @@ if ($id != '') {
 	// Lấy URL của trang web
 	if (isset($config['product'][$type]['qr']) && $config['product'][$type]['qr'] == true) {
 		$url = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-		$qrFile = 'images'.$_SERVER['REQUEST_URI'].'.png';
-		$imageQR = QRcode::png($url,$qrFile);
+		$qrFile = 'images' . $_SERVER['REQUEST_URI'] . '.png';
+		$imageQR = QRcode::png($url, $qrFile);
 		//var_dump($qrFile);die();
-		
+
 	}
 
 
@@ -93,7 +93,7 @@ if ($id != '') {
 	$per_page = 8;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdau$lang,a.mota$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -163,10 +163,10 @@ if ($id != '') {
 	$params = array($idl, $type);
 
 	$curPage = $get_page;
-	$per_page = 20;
+	$per_page = 12;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdau$lang, a.mota$lang,a.photo,a.gia, a.id from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -195,7 +195,7 @@ if ($id != '') {
 	$per_page = 20;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdauvi, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdauvi, a.mota$lang,a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -248,7 +248,7 @@ if ($id != '') {
 	$per_page = 20;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select photo, ten$lang, tenkhongdauvi, tenkhongdauen, giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
+	$sql = "select photo, ten$lang, tenkhongdauvi, tenkhongdauen, mota$lang,giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product where $where order by stt,id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -305,7 +305,7 @@ if ($id != '') {
 	$per_page = 20;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select photo, ten$lang, tenkhongdauvi, tenkhongdauen, giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
+	$sql = "select photo, ten$lang, tenkhongdauvi, mota$lang,tenkhongdauen, giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product where $where order by stt,id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -375,7 +375,7 @@ if ($id != '') {
 	$per_page = 20;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select photo, ten$lang, tenkhongdauvi, tenkhongdauen, giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
+	$sql = "select photo, ten$lang, tenkhongdauvi, mota$lang,tenkhongdauen, giamoi, gia, mota$lang, id from #_product where $where order by stt,id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product where $where order by stt,id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);
@@ -417,10 +417,10 @@ if ($id != '') {
 	$params = array($type);
 
 	$curPage = $get_page;
-	$per_page = 20;
+	$per_page = 12;
 	$startpoint = ($curPage * $per_page) - $per_page;
 	$limit = " limit " . $startpoint . "," . $per_page;
-	$sql = "select a.ten$lang, a.tenkhongdauvi, a.photo,a.gia from #_product a where $where order by a.stt,a.id desc $limit";
+	$sql = "select a.ten$lang, a.tenkhongdauvi, a.mota$lang ,a.photo,a.gia, a.id from #_product a where $where order by a.stt,a.id desc $limit";
 	$product = $d->rawQuery($sql, $params);
 	$sqlNum = "select count(*) as 'num' from #_product a where $where order by a.stt,a.id desc";
 	$count = $d->rawQueryOne($sqlNum, $params);

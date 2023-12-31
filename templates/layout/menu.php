@@ -58,10 +58,10 @@
                     <div class="diachi-top"><?= $optsetting['diachi'] ?></div>
                     <div class="lienhe-top d-flex">
                         <span>Hotline:</span>
-                        <a><?= $optsetting['dienthoai'] ?></a>
+                        <div class="phone-mobile"><a href="tel:<?= $optsetting['dienthoai'] ?>"><?= $optsetting['dienthoai'] ?></a></div>
 
                         <span>hoặc</span>
-                        <a><?= $optsetting['email'] ?></a>
+                        <div class="email-mobile"><a href="mailto:<?= $optsetting['email'] ?>"><?= $optsetting['email'] ?></a></div>
 
                     </div>
                 </div>
@@ -86,9 +86,6 @@
                 <div class="menu_mobi_add">
                     <div class="menu_mobi-add"></div>
                 </div>
-                <div class="header_left_mobile align-self-center">
-                    <a class="header_logo" href=""><img onerror="this.src='thumbs/0x200x1/assets/images/noimage.png';" src="thumbs/0x200x1/upload/photo/logo-milany-2712.png" alt=""></a>
-                </div>
                 <div class="search-from">
                     <div class="frm_timkiem">
                         <input type="text" class="input" id="keyword" placeholder="Tìm kiếm" onkeypress="doEnter(event,'keyword');">
@@ -97,15 +94,8 @@
                 </div>
                 <div class="right flex-inline-center-right">
                     <div></div>
-                    <div class="wishlist-button">
-                        <a href="#">
-                            <div class="quick-icon">
-                                <img src="/images/heart.png" width="24" height="24" alt="">
-                            </div>
-                        </a>
-                    </div>
                     <div class="cart-button">
-                        <a href="#">
+                        <a href="gio-hang">
                             <div class="quick-icon">
                                 <img src="/images/cart.png" width="24" height="24" alt="">
                             </div>
@@ -126,8 +116,8 @@
                     </p>
                     <div class="category-list">
                         <ul class="category-list__items">
-                            <?php foreach($splistmenu_cat_nb as $cat_nb => $cnb) { ?>
-                            <li class="item"><a title="<?= $cnb['ten'.$lang] ?>" href="<?= $cnb[$sluglang] ?>"><?= $cnb['ten'.$lang] ?></a></li>
+                            <?php foreach ($splistmenu as $cat_nb => $cnb) { ?>
+                                <li class="item"><a title="<?= $cnb['ten' . $lang] ?>" href="<?= $cnb[$sluglang] ?>"><?= $cnb['ten' . $lang] ?></a></li>
                             <?php } ?>
                         </ul>
 
@@ -170,7 +160,37 @@
                                 </ul>
                             <?php } ?>
                         </li> -->
-                        <li class="menulicha"><a href="tin-tuc" title="TIN TỨC">tin thị trường</a></li>
+                        <li class="menulicha"><a href="tin-tuc" title="TIN TỨC">tin thị trường<span class="p-2"><i class="fa fa-chevron-down" aria-hidden="true"></i></span></a>
+                            <?php if ($tintuc_listmenu) { ?>
+                                <ul class="menu_cap_con">
+                                    <?php foreach ($tintuc_listmenu as $c => $cat) { ?>
+                                        <li><a title="<?= $cat['ten' . $lang] ?>" href="<?= $cat[$sluglang] ?>"><?= $cat['ten' . $lang] ?></a>
+                                            <?php
+                                            $spcatmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_product_cat where type = ? and id_list = ? and hienthi > 0 order by stt,id desc", array('san-pham', $cat['id']));
+                                            if (count($spcatmenu) > 0) { ?>
+                                                <ul class="menu_cap_2">
+                                                    <?php foreach ($spcatmenu as $c1 => $cat1) {
+                                                        $spitemmenu = $d->rawQuery("select ten$lang, tenkhongdauvi, id,photo from #_product_item where type = ? and id_cat = ? and hienthi > 0 order by stt,id desc", array('san-pham', $cat1['id']));
+                                                    ?>
+                                                        <li><a title="<?= $cat1['ten' . $lang] ?>" href="<?= $cat1[$sluglang] ?>"><?= $cat1['ten' . $lang] ?></a>
+                                                            <?php if (count($spitemmenu) > 0) { ?>
+                                                                <ul class="menu_cap_3">
+                                                                    <?php foreach ($spitemmenu as $c1 => $cat2) { ?>
+                                                                        <li><a title="<?= $cat2['ten' . $lang] ?>" href="<?= $cat2[$sluglang] ?>"><?= $cat2['ten' . $lang] ?></a></li>
+                                                                    <?php } ?>
+                                                                </ul>
+                                                            <?php } ?>
+
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            <?php } ?>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            <?php } ?>
+
+                        </li>
                         <li class="menulicha"><a href="gioi-thieu" title="GIỚI THIỆU">giới thiệu</a></li>
                         <li class="menulicha"><a href="lien-he" title="LIÊN HỆ">liên hệ</a></li>
                     </ul>
